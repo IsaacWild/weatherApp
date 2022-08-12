@@ -1,0 +1,83 @@
+* {
+  outline: solid red;
+}
+
+body {
+  font-size: 24px;
+  font-family: Geneva, Verdana, sans-serif;
+  outline: red;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  background-color: hsl(195, 32%, 85%);
+  color: hsl(109, 53%, 28%);
+  align-items: center;
+  text-align: center;
+  justify-items: center;
+  height: 98vh;
+}
+
+.header {
+  margin: 0.5rem;
+  border-bottom: 0.4rem ridge hsl(109, 53%, 28%);
+  max-width: 80vw;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.menu {
+  margin: 0.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-evenly;
+  width: 80vw;
+}
+
+.btnUnit {
+  font-size: 2rem;
+  border-radius: 5rem;
+  border: none;
+  width: 7rem;
+  background-color: hsl(13, 68%, 60%);
+  transition: all 0.1s;
+  box-shadow: 0.2rem 0.15rem 0.1rem 0.1rem hsl(13, 68%, 40%);
+}
+
+.btnUnit:hover {
+  background-color: hsl(13, 68%, 40%);
+  transform: translate(2px, 2px);
+  box-shadow: 0.1rem 0.05rem 0.05rem 0.05rem hsl(13, 68%, 20%);
+}
+
+.content {
+  margin: 0.5rem;
+  width: 60vw;
+  height: 100%;
+  display: grid;
+  grid-template-rows: repeat(5, auto);
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+.txtTemp {
+  font-size: 3rem;
+}
+
+.wetherIcon {
+  max-height: 200px;
+}
+
+.inputLocation {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.btnSearch {
+  font-size: 1.2rem;
+}
+
+.footer {
+  margin: 0.5rem;
+  font-size: 1rem;
+}
