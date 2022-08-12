@@ -66,6 +66,7 @@ async function getWeather(units) {
     const locationData = await location.json();
     const { lat } = locationData[0];
     const { lon } = locationData[0];
+    const { country } = locationData[0];
     const weather = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=3444792808e73e38eb74b8418397a304`,
     );
@@ -74,10 +75,8 @@ async function getWeather(units) {
     const weatherType = weatherData.weather[0].main;
     const { name } = locationData[0];
 
-    updateWeather(weatherType, temp, name);
-    currentType = weatherType;
+    updateWeather(weatherType, temp, name, country);
     currentTemp = temp;
-    currentName = name;
   } catch (err) {
     // error handling logic
     console.log(err);
@@ -125,9 +124,9 @@ inputLocation.addEventListener('keydown', (e) => {
   }
 });
 
-function updateWeather(weatherType, temp, name) {
+function updateWeather(weatherType, temp, name, country) {
   units === 'metric' ? (txtTemp.textContent = `${temp}°C`) : (txtTemp.textContent = `${temp}°F`);
-  txtWeatherType.textContent = `${name} - ${weatherType}`;
+  txtWeatherType.textContent = `${name}, ${country} - ${weatherType}`;
   const url = 'https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/';
   switch (weatherType) {
     case 'Clear':
