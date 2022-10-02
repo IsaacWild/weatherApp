@@ -1,6 +1,6 @@
 # weatherApp
 
-This is my weather app for the Odin project.
+This is my weather app for the Odin project. Please see the hosted site here - https://weatherappisaac.netlify.app/
 
 ## Description
 
